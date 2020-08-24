@@ -1,5 +1,5 @@
 import {
-  app, BrowserWindow, Tray, Menu,
+  app, BrowserWindow,
 } from 'electron'
 import path from 'path'
 import url from 'url'
@@ -7,11 +7,8 @@ import url from 'url'
 require('dotenv').config()
 
 let mainWindow: Electron.BrowserWindow | null
-let tray = null
 
 const gotTheLock = app.requestSingleInstanceLock()
-
-let shouldClose = false
 
 const createMainWindow = async () => {
   mainWindow = new BrowserWindow({
@@ -39,40 +36,6 @@ const createMainWindow = async () => {
       slashes: true,
     }),
   )
-
-  tray = new Tray(path.join(__dirname, 'icon.png'))
-  tray.setToolTip('Proc-Search')
-  tray.setContextMenu(Menu.buildFromTemplate([
-    {
-      label: 'Show App',
-      click: () => {
-          mainWindow?.show()
-      },
-    },
-    {
-      label: 'Quit',
-      click: () => {
-        shouldClose = true
-        app.quit()
-      },
-    },
-  ]))
-  tray.on('double-click', () => {
-    mainWindow?.show()
-  })
-
-  mainWindow.on('minimize', (event: any) => {
-    event.preventDefault()
-    mainWindow?.hide()
-  })
-
-  mainWindow.on('close', event => {
-    if (shouldClose) {
-      return
-    }
-    event.preventDefault()
-    mainWindow?.minimize()
-  })
 
   return mainWindow
 }
