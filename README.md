@@ -5,7 +5,7 @@ Search and kill processes.
 ## Prerequitements step
 
 1. `yarn install`
-2. create `.env` with:
+2. for use in development, create `.env` with:
 
 ```(bash)
 NODE_ENV=<'development' or 'production'>
@@ -21,6 +21,8 @@ NODE_ENV='development'
 2. `yarn start`
 
 ## Build Prod
+
+If `.env` file was previously created:
 
 ```(bash)
 NODE_ENV='production'
