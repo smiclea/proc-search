@@ -87,6 +87,7 @@ class ProcessStore {
         result = await processUtils.killProcessById(process.pid)
       }
       notificationStore.show(SeverityLevel.SUCCESS, result)
+      this.load()
     } catch (err) {
       notificationStore.show(SeverityLevel.ERROR, err.message)
     }
