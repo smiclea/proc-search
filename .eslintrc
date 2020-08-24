@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "airbnb-typescript"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {},
+  "ignorePatterns": [
+    "*.svg",
+    "*.png",
+    "*.bash",
+    "*.log",
+    "*.jpg",
+    "*.woff"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/jsx-one-expression-per-line": "off",
+    "@typescript-eslint/semi": [
+      2,
+      "never"
+    ],
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "react/jsx-no-duplicate-props": "off",
+    "no-nested-ternary": "off",
+    "no-dupe-class-members": "off",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "no-throw-literal": "off",
+    "@typescript-eslint/type-annotation-spacing": [
+      "error",
+      {
+        "after": true
+      }
+    ],
+    "react/state-in-constructor": "off",
+    "react/destructuring-assignment": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/static-property-placement": "off",
+    "react/no-danger": "off",
+    "prefer-destructuring": "off",
+    "import/no-cycle": "off",
+    "@typescript-eslint/camelcase": "off",
+    "react/jsx-props-no-spreading": "off",
+    "max-classes-per-file": "off",
+    "prefer-promise-reject-errors": "off",
+    "import/prefer-default-export": "off",
+    "jsx-a11y/alt-text": "off"
+  }
+}
