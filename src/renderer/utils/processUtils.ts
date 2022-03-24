@@ -30,13 +30,7 @@ export default {
     return processes
   },
 
-  killProcessByName: async (name: string): Promise<string> => {
-    const { stdout } = await execPromise(`taskkill /IM "${name}" /F`)
-    return stdout
-  },
+  killProcessByName: async (name: string): Promise<string> => (await execPromise(`taskkill /IM "${name}" /F`)).stdout,
 
-  killProcessById: async (pid: number): Promise<string> => {
-    const { stdout } = await execPromise(`taskkill /F /PID ${pid}`)
-    return stdout
-  },
+  killProcessById: async (pid: number): Promise<string> => (await execPromise(`taskkill /F /PID ${pid}`)).stdout,
 }
